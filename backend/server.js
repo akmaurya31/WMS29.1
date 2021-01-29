@@ -77,6 +77,9 @@ var db=mongoose.connect(mongodbUrl, {
 	useCreateIndex:true
 }).catch(error => console.log(error.reason));
 
+
+console.log("dbgggggggggggg",db,error,"ddddssssssssssssssddddddddvb");
+
 // import MongoClient from 'mongodb';
 // //import Axios from 'axios';
 // var url = process.env.MONGODB_URL || 'mongodb+srv://Saurabh:Saurabh@123@cluster0.xavdk.mongodb.net/wms?retryWrites=true&w=majority';
