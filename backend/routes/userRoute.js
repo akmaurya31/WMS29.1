@@ -194,6 +194,8 @@ router.get("/gettranscams", function (req, res) {
 
 router.get("/getcamstransdata", function (req, res) {
     var model = mongoose.model('cams_trans', cams_transSchema, 'cams_trans');
+	
+	console.log("dss dddddddddd",model)
     model.find({}, function (err, data) {
         if (err) {
             res.send(err);
