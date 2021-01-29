@@ -28,7 +28,7 @@ var db=mongoose.connect(mongodbUrl, {
 	useCreateIndex:true
 }).catch(error => console.log(error.reason));
  
- console.log("dbbbbbbbbbbbb",db,error);
+ console.log("dbbbbbbbbbbbb",db);
 
 var newdata="";var newdata1=""; 
 var newdata2="";var datacon="";
