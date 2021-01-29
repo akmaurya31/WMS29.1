@@ -83,13 +83,29 @@ app.use('/api', userRoute);
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 
-
+const foliocams = new Schema({
+    amc_code: { type: String },
+    foliochk: { type: String },
+    inv_name: { type: String },
+    sch_name: { type: String },
+    jnt_name1: { type: String },
+    jnt_name2: { type: String },
+    holding_nature: { type: String },
+    pan_no: { type: String },
+    joint1_pan: { type: String },
+    bank_name: { type: String },
+    ac_no: { type: String },
+    nom_name: { type: String },
+    nom2_name: { type: String },
+    nom3_name: { type: String },
+    ifsc_code: { type: String },
+}, { versionKey: false });
 
 
 app.get("/api/getcamstransdata33", function (req, res) {
-    var model = mongoose.model('cams_trans', cams_transSchema, 'cams_trans');
+   // var model = mongoose.model('cams_trans', cams_transSchema, 'cams_trans');
 	
-	console.log("sffffasdfadf");
+	console.log("sffffasdfadddddf");
 	 var model2 = mongoose.model('folio_cams', foliocams, 'folio_cams');
 	
     model2.find({}, function (err, data) {
