@@ -36,6 +36,28 @@ import Axios from 'axios';
 var Schema = mongoose.Schema;
  import userRoute from './routes/userRoute.js';
 
+
+
+dotenv.config();
+//const mongodbUrl= config.MONGODB_URL;
+
+//const mongodbUrl= process.env.MONGODB_URL || 'mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
+
+//const mongodbUrl= `mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true`;
+
+
+const mongodbUrl= process.env.MONGODB_URL;
+
+var db=mongoose.connect(mongodbUrl, {
+	useNewUrlParser:true,
+	useUnifiedTopology: true,
+	useCreateIndex:true
+}).catch(error => console.log(error.reason));
+
+
+console.log("dbgggggggggggg",db,"ddddssssssssssssssddddddddvb");
+
+
 var app = express();
 const __dirname = path.resolve();
 //var port = process.env.port || 3001;
@@ -61,24 +83,7 @@ app.use('/api', userRoute);
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 
-dotenv.config();
-//const mongodbUrl= config.MONGODB_URL;
 
-//const mongodbUrl= process.env.MONGODB_URL || 'mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
-
-//const mongodbUrl= `mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true`;
-
-
-const mongodbUrl= process.env.MONGODB_URL;
-
-var db=mongoose.connect(mongodbUrl, {
-	useNewUrlParser:true,
-	useUnifiedTopology: true,
-	useCreateIndex:true
-}).catch(error => console.log(error.reason));
-
-
-console.log("dbgggggggggggg",db,"ddddssssssssssssssddddddddvb");
 
 // import MongoClient from 'mongodb';
 // //import Axios from 'axios';
