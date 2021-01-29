@@ -102,6 +102,15 @@ const foliocams = new Schema({
 }, { versionKey: false });
 
 
+
+
+app.get("/api/get33", function (req, res) {
+	
+	 res.send("ddddddddd my data");
+	console.log(" the end sffffasdfadf");
+	})
+	
+	
 app.get("/api/getcamstransdata33", function (req, res) {
    // var model = mongoose.model('cams_trans', cams_transSchema, 'cams_trans');
 	
