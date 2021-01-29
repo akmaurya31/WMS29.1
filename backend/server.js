@@ -1,3 +1,4 @@
+import express from 'express';
 //mongodb+srv://123:<password>@cluster-wms.0uh3j.mongodb.net/test
 //var express = require("express");
 //var path = require("path");
@@ -7,16 +8,12 @@
 //var cors = require('cors');
 //var mongoose = require('mongoose');
 //const joinQuery = require("mongo-join-query");
-
 //const CircularJSON = require('circular-json');
 //const Axios = require("axios");
 //const db = require("./config.js");
 //const { json } = require("express");
 //const foliokarvy = require("./route.js");
 
-
-
-import express from 'express';
 //import data from './data.js';
 import dotenv from 'dotenv';
  //import config from './config.js';
@@ -30,7 +27,7 @@ import bodyParser from 'body-parser';
 
 import morgan from 'morgan';
 //import db from './config.js';
-//import config from './config.js';
+import config from './config.js';
 import cors from 'cors';
 import Axios from 'axios';
 var Schema = mongoose.Schema;
@@ -39,24 +36,24 @@ var Schema = mongoose.Schema;
 
 
 dotenv.config();
-//const mongodbUrl= config.MONGODB_URL;
+const mongodbUrl= config.MONGODB_URL;
 
 //const mongodbUrl= process.env.MONGODB_URL || 'mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
 
 //const mongodbUrl= `mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true`;
 
 
-const mongodbUrl= process.env.MONGODB_URL;
+//const mongodbUrl= process.env.MONGODB_URL;
 
-var db=mongoose.connect(mongodbUrl, {
+mongoose.connect(mongodbUrl, {
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
 	useCreateIndex:true
 }).catch(error => console.log(error.reason));
 
 
-console.log("dbgggggggggggg",db,"ddddssssssssssssssddddddddvb");
-
+ 
+console.log("DAtabasse conected");
 
 var app = express();
 const __dirname = path.resolve();
