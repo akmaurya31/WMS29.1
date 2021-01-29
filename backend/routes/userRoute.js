@@ -20,15 +20,7 @@ const router=express.Router();
 //User Data Seed
 
 
-const mongodbUrl= process.env.MONGODB_URL;
-
-var db=mongoose.connect(mongodbUrl, {
-	useNewUrlParser:true,
-	useUnifiedTopology: true,
-	useCreateIndex:true
-}).catch(error => console.log(error.reason));
  
- console.log("dbbbbbbbbbbbb",db);
 
 var newdata="";var newdata1=""; 
 var newdata2="";var datacon="";
