@@ -78,7 +78,7 @@ var db=mongoose.connect(mongodbUrl, {
 }).catch(error => console.log(error.reason));
 
 
-console.log("dbgggggggggggg",db,error,"ddddssssssssssssssddddddddvb");
+console.log("dbgggggggggggg",db,"ddddssssssssssssssddddddddvb");
 
 // import MongoClient from 'mongodb';
 // //import Axios from 'axios';
