@@ -187,7 +187,22 @@ router.get("/gettranscams", function (req, res) {
 router.get("/getcamstransdata", function (req, res) {
     var model = mongoose.model('cams_trans', cams_transSchema, 'cams_trans');
 	
-	console.log("dss dddddddddd",model)
+	console.log("sffffasdfadf");
+	 var model2 = mongoose.model('folio_cams', foliocams, 'folio_cams');
+	
+    model2.find({}, function (err, data) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.send(data);
+        }
+    });
+	console.log(" the end sffffasdfadf",data);
+	
+	
+	
+	//console.log("dss dddddddddd",model)
     model.find({}, function (err, data) {
         if (err) {
             res.send(err);
