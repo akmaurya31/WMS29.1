@@ -13,10 +13,6 @@ var Schema = mongoose.Schema;
 dotenv.config();
 const mongodbUrl= config.MONGODB_URL;
 
-//const mongodbUrl= process.env.MONGODB_URL || 'mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
-//const mongodbUrl= `mongodb+srv://ankesh123:ankesh123@bookcluster.lqj7y.mongodb.net/wmsdb?authSource=admin&replicaSet=atlas-j3drm8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true`;
-//const mongodbUrl= process.env.MONGODB_URL;
-
 mongoose.connect(mongodbUrl, {
 	useNewUrlParser:true,
 	useUnifiedTopology: true,
@@ -32,9 +28,6 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-
-
- 
 
  
 app.use(express.json());
