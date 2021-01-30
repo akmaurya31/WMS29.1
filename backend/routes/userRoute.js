@@ -1,26 +1,10 @@
 import express from 'express';
 import mongoose from 'mongoose';
-//import dotenv from 'dotenv'; 
-//import path from 'path';
-//import bodyParser from 'body-parser';
-//import morgan from 'morgan';
 import cors from 'cors';
 import Axios from 'axios';
 var Schema = mongoose.Schema;
 
-
-
-
-  
-//import data from '../data.js';
-
-
 const router=express.Router();
-
-//User Data Seed
-
-
- 
 
 var newdata="";var newdata1=""; 
 var newdata2="";var datacon="";
