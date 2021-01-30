@@ -39,79 +39,8 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
  
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use('/api', userRoute);
-
-
-//var getschema = require("../backend/route.js");//ravi line
-
-//const __dirname = path.resolve();
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
-
-
-const foliocams = new Schema({
-    amc_code: { type: String },
-    foliochk: { type: String },
-    inv_name: { type: String },
-    sch_name: { type: String },
-    jnt_name1: { type: String },
-    jnt_name2: { type: String },
-    holding_nature: { type: String },
-    pan_no: { type: String },
-    joint1_pan: { type: String },
-    bank_name: { type: String },
-    ac_no: { type: String },
-    nom_name: { type: String },
-    nom2_name: { type: String },
-    nom3_name: { type: String },
-    ifsc_code: { type: String },
-}, { versionKey: false });
-
-
-
-
-app.get("/api/get33", function (req, res) {
-	
-	 res.send("ddddddddd my data");
-	console.log(" the end sffffasdfadf");
-	})
-	
-	
-app.get("/api/getcamstransdata33", function (req, res) {
-   // var model = mongoose.model('cams_trans', cams_transSchema, 'cams_trans');
-	
-	console.log("sffffasdfadddddf");
-	 var model2 = mongoose.model('folio_cams', foliocams, 'folio_cams');
-	
-    model2.find({}, function (err, data) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            res.send(data);
-        }
-    });
-	console.log(" the end sffffasdfadf");
-	
-	
-})
-
-
-// import MongoClient from 'mongodb';
-// //import Axios from 'axios';
-// var url = process.env.MONGODB_URL || 'mongodb+srv://Saurabh:Saurabh@123@cluster0.xavdk.mongodb.net/wms?retryWrites=true&w=majority';
-
-// MongoClient.connect(url, function(err, db) {
-//   if (err) throw err;
-//   db.collection("customers").findOne({}, function(err, result) {
-//     if (err) throw err;
-//     console.log(result.name);
-//     db.close();
-//   });
-// });
-
-
-
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
